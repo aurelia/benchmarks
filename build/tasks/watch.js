@@ -7,6 +7,7 @@ function reportChange(event){
 }
 
 gulp.task('watch', ['serve'], function() {
+    browserSync({ proxy: "localhost:8080"} );
   gulp.watch(paths.source, ['build-system', browserSync.reload]).on('change', reportChange);
   gulp.watch(paths.html, ['build-html', browserSync.reload]).on('change', reportChange);
   gulp.watch(paths.style, browserSync.reload).on('change', reportChange);
