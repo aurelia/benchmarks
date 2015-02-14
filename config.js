@@ -1,9 +1,8 @@
 System.config({
   "paths": {
-    "*": "*.js",
-    "benchmarks/*": "lib/*.js",
-    "github:*": "jspm_packages/github/*.js",
-    "npm:*": "jspm_packages/npm/*.js"
+    "qpp/*": "/dist/app/*.js",
+    "github:*": "/jspm_packages/github/*.js",
+    "npm:*": "/jspm_packages/npm/*.js"
   }
 });
 
@@ -104,7 +103,7 @@ System.config({
       "assert": "npm:assert@1.3.0"
     },
     "github:jspm/nodelibs-buffer@0.1.0": {
-      "buffer": "npm:buffer@3.0.1"
+      "buffer": "npm:buffer@3.0.2"
     },
     "github:jspm/nodelibs-events@0.1.0": {
       "events-browserify": "npm:events-browserify@0.0.1"
@@ -159,6 +158,11 @@ System.config({
       "util": "npm:util@0.10.3"
     },
     "npm:buffer@3.0.1": {
+      "base64-js": "npm:base64-js@0.0.8",
+      "ieee754": "npm:ieee754@1.1.4",
+      "is-array": "npm:is-array@1.0.1"
+    },
+    "npm:buffer@3.0.2": {
       "base64-js": "npm:base64-js@0.0.8",
       "ieee754": "npm:ieee754@1.1.4",
       "is-array": "npm:is-array@1.0.1"

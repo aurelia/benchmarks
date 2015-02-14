@@ -1,14 +1,14 @@
-var path = require('path');
-
-var appRoot = 'app/';
+var makeConfig = function(name) {
+    name = name + '/';
+    return {
+        root: name,
+        source: name + '**/*.js',
+        html: name + '**/*.html',
+        output: 'dist/' + name
+    };
+};
 
 module.exports = {
-  root: appRoot,
-  source: appRoot + '**/*.js',
-  html: appRoot + '**/*.html',
-  style: 'styles/**/*.css',
-  output: 'dist/app',
-  doc:'./doc',
-  e2eSpecsSrc: 'test/e2e/src/*.js',
-  e2eSpecsDist: 'test/e2e/dist/'
+    app: makeConfig("app"),
+    benchmarks: makeConfig("benchmarks")
 };

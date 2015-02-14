@@ -1,3 +1,9 @@
 <template>
-    Hello from app.html
+    <import from='./nav-bar'></import>
+
+    <nav-bar router.bind="router"></nav-bar>
+
+    <div class="page-host container">
+        <router-view></router-view>
+    </div>
 </template>

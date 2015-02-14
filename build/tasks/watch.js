@@ -1,14 +1,14 @@
 var gulp = require('gulp');
-var paths = require('../paths');
 var browserSync = require('browser-sync');
+var paths = require('../paths');
 
 function reportChange(event){
   console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
 }
 
 gulp.task('watch', ['serve'], function() {
-    browserSync({ proxy: "localhost:8080"} );
-  gulp.watch(paths.source, ['build-system', browserSync.reload]).on('change', reportChange);
-  gulp.watch(paths.html, ['build-html', browserSync.reload]).on('change', reportChange);
-  gulp.watch(paths.style, browserSync.reload).on('change', reportChange);
+  browserSync({ proxy: "localhost:8080"} );
+  gulp.watch(paths.app.source, ['build-app', browserSync.reload]).on('change', reportChange);
+  gulp.watch(paths.benchmarks.source, ['build-benchmarks', browserSync.reload]).on('change', reportChange);
+  gulp.watch(paths.app.html, ['build-html', browserSync.reload]).on('change', reportChange);
 });

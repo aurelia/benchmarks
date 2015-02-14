@@ -8,26 +8,39 @@ var paths = require('../paths');
 var compilerOptions = require('../6to5-options');
 var assign = Object.assign || require('object.assign');
 
-gulp.task('build-system', function () {
-  return gulp.src(paths.source)
-    .pipe(plumber())
-    .pipe(changed(paths.output, {extension: '.js'}))
-    .pipe(sourcemaps.init())
-    .pipe(to5(assign({}, compilerOptions, {modules:'system'})))
-    .pipe(sourcemaps.write({includeContent: false, sourceRoot: '/' + paths.root }))
-    .pipe(gulp.dest(paths.output));
+var buildJs = function(config) {
+    console.log(config);
+    return gulp.src(config.source)
+        .pipe(plumber())
+        .pipe(changed(config.output, {extension: '.js'}))
+        .pipe(sourcemaps.init())
+        .pipe(to5(assign({}, compilerOptions, {modules:'system'})))
+        .pipe(sourcemaps.write({includeContent: false, sourceRoot: '/' + config.root }))
+        .pipe(gulp.dest(config.output));
+};
+
+var buildHtml = function(config) {
+    return gulp.src(config.html)
+               .pipe(changed(config.output, {extension:'.html'}))
+               .pipe(gulp.dest(config.output));
+};
+
+gulp.task('build-app', function () {
+    return buildJs(paths.app);
+});
+
+gulp.task('build-benchmarks', function() {
+    return buildJs(paths.benchmarks);
 });
 
 gulp.task('build-html', function () {
-  return gulp.src(paths.html)
-    .pipe(changed(paths.output, {extension: '.html'}))
-    .pipe(gulp.dest(paths.output));
+    return buildHtml(paths.app);
 });
 
 gulp.task('build', function(callback) {
   return runSequence(
     'clean',
-    ['build-system', 'build-html'],
+    ['build-app', 'build-benchmarks', 'build-html'],
     callback
   );
 });
