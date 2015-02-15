@@ -1,14 +1,12 @@
-var path = require("path");
-var express = require("express");
+var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
+
+app.use(bodyParser.json())
+app.use(require('./controllers/static.js'));
+app.use('/api/tests', require('./controllers/tests.js'));
+
 var port = 8080;
-
-app.get("/", function(request, response) {
-    response.redirect("/dist/app/index.html");
-});
-
-app.use(express.static(__dirname + "/../"));
-
 app.listen(port, function(){
-    console.log("Server listening on", port);
+    console.log('Server listening on', port);
 });

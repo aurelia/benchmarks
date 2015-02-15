@@ -9,7 +9,6 @@ var compilerOptions = require('../6to5-options');
 var assign = Object.assign || require('object.assign');
 
 var buildJs = function(config) {
-    console.log(config);
     return gulp.src(config.source)
         .pipe(plumber())
         .pipe(changed(config.output, {extension: '.js'}))

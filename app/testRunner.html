@@ -1,0 +1,18 @@
+<template>
+    <h3>Run Tests</h3>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <tr>
+                    <th>Micro</th>
+                </tr>
+                <tr repeat.for="test of microTests">
+                    <td>${test}</td>
+                </tr>
+                <tr>
+                    <th>Macro</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</template>
