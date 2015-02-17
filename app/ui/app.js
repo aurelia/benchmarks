@@ -1,7 +1,7 @@
 import {Router} from 'aurelia-router';
 
 let routes = [
-        { route: [''],  moduleId: 'testRunner', nav: true, title:'Run Tests' },
+        { route: [''],  moduleId: 'ui/testRunner', nav: true, title:'Run Tests' },
     ];
 
 export class App {

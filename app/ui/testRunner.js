@@ -9,11 +9,15 @@ export class TestRunner {
     }
 
     activate() {
-        return this.http.get("/api/tests")
+        return this.http.get('/api/tests')
                    .then(m => {
                        var result = JSON.parse(m.response);
                        this.microTests = result.micro;
                        this.macroTests = result.macro
                    });
+    }
+
+    runTests() {
+        var tests = this.microTests.map(t => System.import(`benchmarks/micro/${t}/index`));
     }
 }
