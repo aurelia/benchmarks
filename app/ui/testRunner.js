@@ -6,6 +6,8 @@ export class TestRunner {
 
     constructor(http) {
         this.http = http;
+        this.microTests = [];
+        this.macroTests = [];
     }
 
     activate() {
@@ -18,6 +20,11 @@ export class TestRunner {
     }
 
     runTests() {
-        var tests = this.microTests.map(t => System.import(`benchmarks/micro/${t}/index`));
+        var testPromises = this.microTests.map(t => System.import(`benchmarks/micro/${t}/index`));
+        Promise.all(testPromises).then(() => {
+            testPromises.map(p => p.then((module) => {
+                module.default.run();
+            }));
+        });
     }
 }
