@@ -1,8 +1,8 @@
-
 System.config({
   "paths": {
-    "github:*": "/jspm_packages/github/*.js",
-    "npm:*": "/jspm_packages/npm/*.js",
+    "github:*": "jspm_packages/github/*.js",
+    "npm:*": "jspm_packages/npm/*.js",
+    "benchmarks/*": "/dist/benchmarks",
     "*": "*.js"
   }
 });
@@ -14,7 +14,6 @@ System.config({
     "aurelia-framework": "github:aurelia/framework@0.8.6",
     "aurelia-http-client": "github:aurelia/http-client@0.4.4",
     "aurelia-router": "github:aurelia/router@0.5.5",
-    "benchmark": "npm:benchmark@1.0.0",
     "bootstrap": "github:twbs/bootstrap@3.3.2",
     "font-awesome": "npm:font-awesome@4.3.0",
     "github:aurelia/binding@0.3.4": {
@@ -128,7 +127,7 @@ System.config({
       "path-browserify": "npm:path-browserify@0.0.0"
     },
     "github:jspm/nodelibs-process@0.1.1": {
-      "process": "npm:process@0.10.0"
+      "process": "npm:process@0.10.1"
     },
     "github:jspm/nodelibs-querystring@0.1.0": {
       "querystring": "npm:querystring@0.2.0"
@@ -158,14 +157,6 @@ System.config({
     },
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"
-    },
-    "npm:benchmark@1.0.0": {
-      "process": "github:jspm/nodelibs-process@0.1.1"
-    },
-    "npm:buffer@3.0.1": {
-      "base64-js": "npm:base64-js@0.0.8",
-      "ieee754": "npm:ieee754@1.1.4",
-      "is-array": "npm:is-array@1.0.1"
     },
     "npm:buffer@3.0.2": {
       "base64-js": "npm:base64-js@0.0.8",
@@ -253,4 +244,3 @@ System.config({
   }
 });
 
-System.map["benchmarks"] = "/dist/benchmarks/";
