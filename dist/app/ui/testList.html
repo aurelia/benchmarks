@@ -11,7 +11,7 @@
                 </tr>
                 <tr repeat.for="test of microTests">
                     <td>${test.name}</td>
-                    <td>${test.status}</td>
+                    <td><i status.bind='test.status'></i></td>
                     <td>${test.elapsed}</td>
                 </tr>
             </table>
