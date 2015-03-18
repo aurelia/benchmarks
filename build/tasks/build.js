@@ -29,7 +29,8 @@ gulp.task('build-app', function () {
 });
 
 gulp.task('build-benchmarks', function() {
-    return buildJs(paths.benchmarks);
+    buildJs(paths.benchmarks);
+    return buildHtml(paths.benchmarks);
 });
 
 gulp.task('build-html', function () {

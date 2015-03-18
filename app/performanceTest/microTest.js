@@ -16,7 +16,7 @@ export class MicroTest extends Test {
                     fn: testFn,
                     onComplete: () => {
                         this._status = "complete";
-                        this._elapsed = bench.times.elapsed;
+                        this._elapsed = bench.times.period;
                     }
                 });
             this._status = "running";

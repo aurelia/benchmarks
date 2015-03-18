@@ -13,3 +13,7 @@ gulp watch
 ```
 
 Browse to [http://localhost:3000](http://localhost:3000).
+
+## Adding Micro Benchmarks
+
+Micro benchmarks 

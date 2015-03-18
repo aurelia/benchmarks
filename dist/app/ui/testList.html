@@ -7,9 +7,23 @@
                 <tr>
                     <th>Name</th>
                     <th>Status</th>
-                    <th>Elapsed (s)</th>
+                    <th>Mean Time (s)</th>
                 </tr>
                 <tr repeat.for="test of microTests">
+                    <td>${test.name}</td>
+                    <td><i status.bind='test.status'></i></td>
+                    <td>${test.elapsed}</td>
+                </tr>
+            </table>
+            <hr>
+            <h5>Macro</h5>
+            <table class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Mean Time (s)</th>
+                </tr>
+                <tr repeat.for="test of macroTests">
                     <td>${test.name}</td>
                     <td><i status.bind='test.status'></i></td>
                     <td>${test.elapsed}</td>
