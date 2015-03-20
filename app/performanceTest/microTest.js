@@ -10,17 +10,24 @@ export class MicroTest extends Test {
     }
 
     run() {
-        this._importComplete.then(testFn => {
-            let bench = new Benchmark(this.name, {
-                    defer: true,
-                    fn: testFn,
-                    onComplete: () => {
-                        this._status = "complete";
-                        this._elapsed = bench.times.period;
-                    }
-                });
-            this._status = "running";
-            bench.run({async:true});
+
+        return this._importComplete.then(testFn => {
+
+            let testRunner = (resolve, reject) => {
+                let bench = new Benchmark(this.name, {
+                        defer: true,
+                        fn: testFn,
+                        onComplete: () => {
+                            this._status = "complete";
+                            this._elapsed = bench.times.period;
+                            resolve(this);
+                        }
+                    });
+                this._status = "running";
+                bench.run({async:true});
+            };
+            
+            return new Promise(testRunner);
         });
     }
 }

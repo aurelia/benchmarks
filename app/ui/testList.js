@@ -39,7 +39,7 @@ export class TestList {
                 tests[currentIndex].run().then(next);
             }
         };
-        
+
         execute();
     }
 }
