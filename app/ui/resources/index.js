@@ -1,12 +1,5 @@
-import {StatusAttachedBehavior} from './statusAttachedBehavior'
+import {Status} from './status'
 
-function install(aurelia) {
-    aurelia.withResources([StatusAttachedBehavior]);
-}
-
-console.log(StatusAttachedBehavior);
-
-export {
-    StatusAttachedBehavior,
-    install
+export function install(aurelia) {
+    aurelia.withResources([Status]);
 }

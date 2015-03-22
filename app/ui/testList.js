@@ -21,25 +21,64 @@ export class TestList {
                    });
     }
 
-    runTests() {
-        this.run(this.microTests);
-        this.run(this.macroTests);
+    loaded() {
+
     }
 
-    run(tests) {
-        let currentIndex = 0;
+    runTests() {
+        this.runMicroTests()
+            .then(() => this.runMacroTests());
+    }
 
-        let next = () => {
-            currentIndex += 1;
-            execute();
-        };
+    runMacroTests() {
 
-        let execute = () => {
-            if(currentIndex < tests.length) {
-                tests[currentIndex].run().then(next);
-            }
-        };
+        return new Promise((resolve, reject) => {
 
-        execute();
+            let currentIndex = 0;
+            let tests = this.macroTests;
+
+            let next = () => {
+                currentIndex += 1;
+                execute.call(this);
+            };
+
+            let execute = () => {
+                if(currentIndex < tests.length) {
+                    this.currentMacroTest = tests[currentIndex];
+                    this.currentMacroTest.run().then(next);
+                }
+                else{
+                    this.currentMacroTest = null;
+                    resolve();
+                }
+            };
+
+            execute.call(this);
+        });
+    }
+
+    runMicroTests() {
+
+        return new Promise((resolve, reject) => {
+
+            let currentIndex = 0;
+            let tests = this.microTests;
+
+            let next = () => {
+                currentIndex += 1;
+                execute.call(this);
+            };
+
+            let execute = () => {
+                if(currentIndex < tests.length) {
+                    tests[currentIndex].run().then(next);
+                }
+                else{
+                    resolve();
+                }
+            };
+
+            execute.call(this);
+        });
     }
 }

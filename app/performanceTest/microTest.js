@@ -26,7 +26,7 @@ export class MicroTest extends Test {
                 this._status = "running";
                 bench.run({async:true});
             };
-            
+
             return new Promise(testRunner);
         });
     }

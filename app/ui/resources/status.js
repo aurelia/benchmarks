@@ -1,6 +1,14 @@
-export class StatusAttachedBehavior {
+import {Behavior} from 'aurelia-templating';
+
+export class Status {
 
   static inject() { return [Element]; }
+
+  static metadata() {
+      return Behavior
+                .attachedBehavior("status")
+                .withProperty("status", "statusChanged");
+  }
 
   constructor(element) {
     this.element = element;
@@ -8,7 +16,7 @@ export class StatusAttachedBehavior {
     this.element.classList.add('fa-circle-o-notch');
   }
 
-  valueChanged(newValue){
+  statusChanged(newValue){
     switch(newValue){
         case 'running':
             this.element.classList.add('fa-spin')
