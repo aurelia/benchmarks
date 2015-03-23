@@ -30,6 +30,24 @@ export class TestList {
             .then(() => this.runMacroTests());
     }
 
+    runSingleMicroTest(test) {
+
+        return new Promise((resolve, reject) => {
+            test.run().then( () => resolve() );
+        });
+    }
+
+    runSingleMacroTest(test) {
+
+        return new Promise((resolve, reject) => {
+            this.currentMacroTest = test;
+            this.currentMacroTest.run().then( () => {
+                this.currentMacroTest = null;
+                resolve();
+            });
+      });
+    }
+
     runMacroTests() {
 
         return new Promise((resolve, reject) => {

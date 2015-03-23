@@ -8,11 +8,13 @@
             <h5>Micro</h5>
             <table class="table">
                 <tr>
+                    <th>Single run</th>
                     <th>Name</th>
                     <th>Status</th>
                     <th>Mean Time (s)</th>
                 </tr>
                 <tr repeat.for="test of microTests">
+                    <td><button click.delegate="$parent.runSingleMicroTest(test)" class="btn btn-xs btn-default">Run</button></td>
                     <td>${test.name}</td>
                     <td><i status.bind='test.status'></i></td>
                     <td>${test.elapsed}</td>
@@ -22,17 +24,19 @@
             <h5>Macro</h5>
             <table class="table">
                 <tr>
+                    <th>Single run</th>
                     <th>Name</th>
                     <th>Status</th>
                     <th>Mean Time (s)</th>
                 </tr>
                 <tr repeat.for="test of macroTests">
+                    <td><button click.delegate="$parent.runSingleMacroTest(test)" class="btn btn-xs btn-default">Run</button></td>
                     <td>${test.name}</td>
                     <td><i status.bind='test.status'></i></td>
                     <td>${test.elapsed}</td>
                 </tr>
             </table>
-            <button click.trigger="runTests()" class="btn btn-default">Run</button>
+            <button click.trigger="runTests()" class="btn btn-default">Run all</button>
         </div>
     </div>
     <div class="row">
