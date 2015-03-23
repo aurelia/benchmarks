@@ -25,6 +25,7 @@ export class TestFrame {
 
   testEnded() {
       this.test.end();
+      this.path = "";
   }
 
   dispatch(event) {
