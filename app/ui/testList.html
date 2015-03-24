@@ -8,10 +8,10 @@
             <h5>Micro</h5>
             <table class="table">
                 <tr>
-                    <th>Single run</th>
-                    <th>Name</th>
-                    <th>Status</th>
-                    <th>Mean Time (s)</th>
+                    <th class="col-md-2">Single run</th>
+                    <th class="col-md-5">Name</th>
+                    <th class="col-md-2">Status</th>
+                    <th class="col-md-3">Mean Time (s)</th>
                 </tr>
                 <tr repeat.for="test of microTests">
                     <td><button click.delegate="$parent.runSingleMicroTest(test)" class="btn btn-xs btn-default">Run</button></td>
@@ -24,10 +24,10 @@
             <h5>Macro</h5>
             <table class="table">
                 <tr>
-                    <th>Single run</th>
-                    <th>Name</th>
-                    <th>Status</th>
-                    <th>Mean Time (s)</th>
+                    <th class="col-md-2">Single run</th>
+                    <th class="col-md-5">Name</th>
+                    <th class="col-md-2">Status</th>
+                    <th class="col-md-3">Mean Time (s)</th>
                 </tr>
                 <tr repeat.for="test of macroTests">
                     <td><button click.delegate="$parent.runSingleMacroTest(test)" class="btn btn-xs btn-default">Run</button></td>
@@ -36,7 +36,24 @@
                     <td>${test.elapsed}</td>
                 </tr>
             </table>
-            <button click.trigger="runTests()" class="btn btn-default">Run all</button>
+            <button click.trigger="runTests()" class="btn btn-primary">Run All</button>
+        </div>
+    </div>
+    <div class="row">
+        <hr>
+        <div class="col-md-6">
+            <form submit.delegate="saveResults()">
+                <div class="form-group">
+                    <label>Save Results (not implemented yet):</label>
+                    <input class="form-control" type="text" required value.bind="resultsName"></input>
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-default" type="submit" value="Save"></input>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+
         </div>
     </div>
     <div class="row">

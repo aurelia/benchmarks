@@ -10,6 +10,7 @@ export class TestList {
         this.http = http;
         this.microTests = [];
         this.macroTests = [];
+        this.resultsName = "";
     }
 
     activate() {
@@ -19,6 +20,10 @@ export class TestList {
                        this.microTests = result.micro.map(name => new MicroTest(name));
                        this.macroTests = result.macro.map(name => new MacroTest(name));
                    });
+    }
+
+    saveResults() {
+        console.log(this.resultsName);
     }
 
     loaded() {
