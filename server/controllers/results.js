@@ -8,7 +8,7 @@ mkdirp.sync(basePath);
 
 router.get('/', function(request, response) {
 
-    // get list of results
+    
 });
 
 router.post('/', function(request, response) {

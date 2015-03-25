@@ -12,7 +12,7 @@ export class TestList {
         this.macroTests = [];
         this.resultsName = "";
 
-        http.defaultRequestHeaders.add('Content-Type', 'application/json');
+        this.http.configure(x => x.withHeader('Content-Type', 'application/json'));
     }
 
     activate() {
