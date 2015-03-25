@@ -11,6 +11,8 @@ export class TestList {
         this.microTests = [];
         this.macroTests = [];
         this.resultsName = "";
+
+        http.defaultRequestHeaders.add('Content-Type', 'application/json');
     }
 
     activate() {
@@ -23,7 +25,18 @@ export class TestList {
     }
 
     saveResults() {
-        console.log(this.resultsName);
+
+        let testProjection = test => {
+            return { name: test.name, elapsed: test.elapsed };
+        };
+
+        let resultData = {
+            name: this.resultsName,
+            microTests: this.microTests.map(testProjection),
+            macrotests: this.macroTests.map(testProjection)
+        };
+
+        return this.http.post('/api/results', resultData).then(() => this.resultsName = "");
     }
 
     loaded() {
