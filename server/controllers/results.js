@@ -1,25 +1,33 @@
-var fs = require('fs');
-var mkdirp = require('mkdirp');
 var express = require('express');
 var router = express.Router();
-
+var directory = require('../fsutil/directory');
 var basePath = 'dist/results/';
-mkdirp.sync(basePath);
 
 router.get('/', function(request, response) {
 
-    
+    var results = directory.getFileNames(basePath);
+    response.json({
+        results: results
+    });
+
+});
+
+router.get('/:name', function(request, response) {
+    var name = request.params.name;
+    var options = {
+        headers: { "Content-Type": "json" },
+        root: __dirname + "/../../" + basePath
+    };
+    response.sendFile(name, options);
 });
 
 router.post('/', function(request, response) {
 
-
     var results = request.body;
-    fs.writeFile(basePath + results.name + '.json', JSON.stringify(results), function(err){
-        // todo: error handling...
-        if(err) console.log(err);
-        response.end();
-    });
+    directory.make(basePath);
+    directory.writeFile(basePath + results.name + '.json', JSON.stringify(results));
+    response.end();
+
 });
 
 module.exports = router;

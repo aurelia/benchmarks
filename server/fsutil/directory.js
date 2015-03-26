@@ -1,4 +1,5 @@
 var fs = require('fs');
+var mkdirp = require('mkdirp');
 
 var getChildren = function(directory) {
     var base = __dirname + "/../.." + directory;
@@ -7,6 +8,21 @@ var getChildren = function(directory) {
     });
 };
 
+var getFileNames = function(directory) {
+    return fs.readdirSync(directory);
+};
+
+var make = function(path) {
+    mkdirp.sync(path);
+};
+
+var writeFile = function(path, contents) {
+    fs.writeFileSync(path, contents);
+};
+
 module.exports = {
-    getChildren: getChildren
+    getChildren: getChildren,
+    make: make,
+    writeFile: writeFile,
+    getFileNames: getFileNames
 };
