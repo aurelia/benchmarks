@@ -29,7 +29,7 @@ export class TestFrame {
   }
 
   dispatch(event) {
-      if(event.data == "test-start") {
+      if(event.data === "test-start") {
           this.testStarted();
       }
       else if(event.data === "test-end") {

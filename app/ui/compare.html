@@ -1,5 +1,22 @@
 <template>
 
-    Comparisons go here...
+ <div class="row">
+    <div class="col-md-6">
+
+        <select value.bind="leftResult" change.trigger="selectLeft()" class="form-control">
+            <option value="">Select a test run</option>
+            <option repeat.for="result of results" value.bind="result">${result}</option>
+        </select>
+
+    </div>
+    <div class="col-md-6">
+
+        <select value.bind="rightResult" change.trigger="selectRight()" class="form-control">
+            <option value="">Select a test run</option>
+            <option repeat.for="result of results" value.bind="result">${result}</option>
+        </select>
+
+    </div>
+</div>
 
 </template>
