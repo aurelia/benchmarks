@@ -12,5 +12,5 @@ export function configure(aurelia) {
         .eventAggregator()
         .plugin('./ui/resources/index');
 
-    aurelia.start().then(a => a.setRoot('ui/app', document.body));
+    aurelia.start().then(a => a.setRoot('ui/app'));
 }

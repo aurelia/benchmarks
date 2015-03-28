@@ -33,7 +33,7 @@ export class TestList {
         let resultData = {
             name: this.resultsName,
             microTests: this.microTests.map(testProjection),
-            macrotests: this.macroTests.map(testProjection)
+            macroTests: this.macroTests.map(testProjection)
         };
 
         return this.http.post('/api/results', resultData).then(() => this.resultsName = "");
