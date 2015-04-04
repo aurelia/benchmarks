@@ -43,6 +43,17 @@
 
     </div>
     <div class="col-md-4">
+        <h3>&nbsp</h3>
+        <table class="table table-condensed">
+            <tr repeat.for="result of differences.microTests">
+                <td>${result.name}</td>
+                <td>${result.difference}</td>
+            </tr>
+            <tr repeat.for="result of differences.macroTests">
+                <td>${result.name}</td>
+                <td>${result.difference}</td>
+            </tr>
+        </table>
 
     </div>
 
