@@ -55,7 +55,7 @@ export class Compare {
             if(left) {
                 result.push({
                     name: right.name,
-                    difference: parseFloat(left[0].elapsed) - parseFloat(right.elapsed)
+                    difference: (parseFloat(left[0].elapsed) - parseFloat(right.elapsed)).toFixed(4)
                 });
             } else {
                 result.push({name: ""});

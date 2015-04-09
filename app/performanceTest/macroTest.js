@@ -26,7 +26,7 @@ export class MacroTest extends Test {
 
     end() {
         this._status = "complete";
-        this._elapsed = (new Date() - this._startTime) / 1000.0;
+        this._elapsed = ((new Date() - this._startTime) / 1000.0).toFixed(4);
         this._endResolve();
     }
 }
