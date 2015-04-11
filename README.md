@@ -66,3 +66,13 @@ export function configure(aurelia) {
     aurelia.start().then(a => a.setRoot('app', document.body));
 }
 ```
+
+**Todo**
+parse a complex expression
+string interpolation parse
+observe a simple property w/ O.o
+observe a simple property w/o O.o
+observe an input element's value
+observe an SVG element
+observe a property with dependencies
+observe a property with custom adapter
