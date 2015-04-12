@@ -2,6 +2,12 @@ import {HttpClient} from 'aurelia-http-client';
 
 let baseUrl = "/api/results/";
 
+let compute = function(left, right) {
+    if(left && right) {
+        return (parseFloat(left.elapsed) - parseFloat(right.elapsed)).toFixed(4)
+    }
+};
+
 export class Compare {
     static inject() { return [HttpClient]; }
 
@@ -36,7 +42,7 @@ export class Compare {
 
     createDifferences() {
         this.differences = {};
-        if(this.leftResults.microTests && this.rightResults.macroTests) {
+        if(this.leftResults.microTests && this.rightResults.microTests) {
             this.differences.microTests = this._computeDifference(this.leftResults.microTests, this.rightResults.microTests);
         }
         if(this.leftResults.macroTests && this.rightResults.macroTests) {
@@ -52,13 +58,13 @@ export class Compare {
         let result = [];
         rightTests.map(right => {
             let left = leftTests.filter(t => t.name == right.name);
-            if(left) {
+            if(left && left.length > 0) {
                 result.push({
                     name: right.name,
-                    difference: (parseFloat(left[0].elapsed) - parseFloat(right.elapsed)).toFixed(4)
+                    difference: compute(left[0], right)
                 });
             } else {
-                result.push({name: ""});
+                result.push({name: right.name});
             }
         });
         return result;

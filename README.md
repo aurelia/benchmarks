@@ -68,7 +68,6 @@ export function configure(aurelia) {
 ```
 
 **Todo**
-parse a complex expression
 string interpolation parse
 observe a simple property w/ O.o
 observe a simple property w/o O.o
