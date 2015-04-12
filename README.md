@@ -67,6 +67,9 @@ export function configure(aurelia) {
 }
 ```
 
+**Note**
+Enable Chrome's microsecond timer with --enable-benchmarking
+
 **Todo**
 string interpolation parse
 observe a simple property w/ O.o
