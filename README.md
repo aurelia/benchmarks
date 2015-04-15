@@ -71,7 +71,6 @@ export function configure(aurelia) {
 Enable Chrome's microsecond timer with --enable-benchmarking
 
 **Todo**
-string interpolation parse
 observe a simple property w/ O.o
 observe a simple property w/o O.o
 observe an input element's value
