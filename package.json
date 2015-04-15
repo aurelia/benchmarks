@@ -17,6 +17,7 @@
       "aurelia-framework": "github:aurelia/framework@^0.10.0",
       "aurelia-http-client": "github:aurelia/http-client@^0.7.0",
       "aurelia-router": "github:aurelia/router@^0.7.0",
+      "aurelia-templating-binding": "github:aurelia/templating-binding@^0.10.0",
       "bootstrap": "github:twbs/bootstrap@^3.3.2",
       "font-awesome": "npm:font-awesome@^4.3.0"
     },
