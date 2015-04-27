@@ -1,6 +1,7 @@
 import {HttpClient} from 'aurelia-http-client';
 import {MicroTest} from 'performanceTest/microTest'
 import {MacroTest} from 'performanceTest/macroTest'
+import async from 'async';
 
 export class TestList {
 
@@ -70,51 +71,21 @@ export class TestList {
 
         return new Promise((resolve, reject) => {
 
-            let currentIndex = 0;
-            let tests = this.macroTests;
-
-            let next = () => {
-                currentIndex += 1;
-                execute.call(this);
+            let execute = (test, callback) => {
+                    test.run().then(() => callback());
             };
 
-            let execute = () => {
-                if(currentIndex < tests.length) {
-                    this.currentMacroTest = tests[currentIndex];
-                    this.currentMacroTest.run().then(next);
-                }
-                else{
-                    this.currentMacroTest = null;
-                    resolve();
-                }
-            };
-
-            execute.call(this);
-        });
+            async.eachSeries(this.macroTests, execute, resolve());
     }
 
     runMicroTests() {
-
         return new Promise((resolve, reject) => {
 
-            let currentIndex = 0;
-            let tests = this.microTests;
-
-            let next = () => {
-                currentIndex += 1;
-                execute.call(this);
+            let execute = (test, callback) => {
+                    test.run().then(() => callback());
             };
 
-            let execute = () => {
-                if(currentIndex < tests.length) {
-                    tests[currentIndex].run().then(next);
-                }
-                else{
-                    resolve();
-                }
-            };
-
-            execute.call(this);
-        });
+            async.eachSeries(this.microTests, execute, () => resolve()));
+        }
     }
 }

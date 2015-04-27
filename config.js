@@ -15,6 +15,7 @@ System.config({
 
 System.config({
   "map": {
+    "async": "npm:async@0.9.0",
     "aurelia-bootstrapper": "github:aurelia/bootstrapper@0.10.0",
     "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.5.1",
     "aurelia-framework": "github:aurelia/framework@0.9.0",
@@ -208,6 +209,9 @@ System.config({
     },
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"
+    },
+    "npm:async@0.9.0": {
+      "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:buffer@3.1.2": {
       "base64-js": "npm:base64-js@0.0.8",
