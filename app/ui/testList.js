@@ -71,11 +71,9 @@ export class TestList {
 
         return new Promise((resolve, reject) => {
 
-            let execute = (test, callback) => {
-                    test.run().then(() => callback());
-            };
-
-            async.eachSeries(this.macroTests, execute, resolve());
+            let execute = (test, callback) => this.runSingleMacroTest(test).then(callback);
+            async.eachSeries(this.macroTests, execute, resolve);
+        });
     }
 
     runMicroTests() {
@@ -85,7 +83,7 @@ export class TestList {
                     test.run().then(() => callback());
             };
 
-            async.eachSeries(this.microTests, execute, () => resolve()));
-        }
+            async.eachSeries(this.microTests, execute, resolve);
+        });
     }
 }

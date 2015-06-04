@@ -1,16 +1,9 @@
-import {Behavior} from 'aurelia-templating';
+import {customElement, inject, bindable} from 'aurelia-framework';
 
+@customElement('test-frame')
+@inject(Element)
+@bindable('test')
 export class TestFrame {
-
-  static metadata(){
-    return Behavior.customElement("test-frame")
-                   .withProperty("test", "testChanged");
-  }
-
-  static inject() {
-      return [Element];
-  }
-
   constructor(element) {
       this._element = element;
   }

@@ -1,22 +1,15 @@
-import {Behavior} from 'aurelia-templating';
+import {customAttribute, inject} from 'aurelia-framework';
 
+@customAttribute('status')
+@inject(Element)
 export class Status {
-
-  static inject() { return [Element]; }
-
-  static metadata() {
-      return Behavior
-                .attachedBehavior("status")
-                .withProperty("status", "statusChanged");
-  }
-
   constructor(element) {
     this.element = element;
     this.element.classList.add('fa');
     this.element.classList.add('fa-circle-o-notch');
   }
 
-  statusChanged(newValue){
+  valueChanged(newValue){
     switch(newValue){
         case 'running':
             this.element.classList.add('fa-spin')

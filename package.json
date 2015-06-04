@@ -13,21 +13,21 @@
   "jspm": {
     "dependencies": {
       "async": "npm:async@^0.9.0",
-      "aurelia-bootstrapper": "github:aurelia/bootstrapper@^0.11.0",
-      "aurelia-dependency-injection": "github:aurelia/dependency-injection@^0.6.0",
-      "aurelia-framework": "github:aurelia/framework@^0.10.0",
-      "aurelia-http-client": "github:aurelia/http-client@^0.7.0",
-      "aurelia-router": "github:aurelia/router@^0.7.0",
-      "aurelia-templating-binding": "github:aurelia/templating-binding@^0.10.0",
-      "bootstrap": "github:twbs/bootstrap@^3.3.2",
+      "aurelia-bootstrapper": "github:aurelia/bootstrapper@^0.12.0",
+      "aurelia-dependency-injection": "github:aurelia/dependency-injection@^0.7.1",
+      "aurelia-framework": "github:aurelia/framework@^0.11.0",
+      "aurelia-http-client": "github:aurelia/http-client@^0.8.1",
+      "aurelia-router": "github:aurelia/router@^0.8.1",
+      "aurelia-templating": "github:aurelia/templating@^0.11.2",
+      "aurelia-templating-binding": "github:aurelia/templating-binding@^0.11.0",
+      "bootstrap": "github:twbs/bootstrap@^3.3.4",
+      "css": "github:systemjs/plugin-css@^0.1.11",
       "font-awesome": "npm:font-awesome@^4.3.0"
     },
     "devDependencies": {
-      "babel": "npm:babel-core@^5.0.12",
-      "babel-runtime": "npm:babel-runtime@^5.0.12",
-      "core-js": "npm:core-js@^0.8.1",
-      "traceur": "github:jmcriffey/bower-traceur@0.0.87",
-      "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.87"
+      "babel": "npm:babel-core@^5.1.13",
+      "babel-runtime": "npm:babel-runtime@^5.1.13",
+      "core-js": "npm:core-js@^0.9.4"
     }
   },
   "devDependencies": {
@@ -36,7 +36,7 @@
     "conventional-changelog": "0.0.11",
     "del": "^1.1.0",
     "gulp": "^3.8.10",
-    "gulp-babel": "^5.0.0",
+    "gulp-babel": "^5.1.0",
     "gulp-bump": "^0.1.11",
     "gulp-changed": "^1.1.0",
     "gulp-jshint": "^1.9.0",

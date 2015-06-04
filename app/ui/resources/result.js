@@ -1,20 +1,13 @@
-import {Behavior} from 'aurelia-templating';
+import {customAttribute, inject} from 'aurelia-framework';
 
+@customAttribute('result')
+@inject(Element)
 export class Result {
-
-  static inject() { return [Element]; }
-
-  static metadata() {
-      return Behavior
-                .attachedBehavior("result")
-                .withProperty("result", "resultChanged");
-  }
-
   constructor(element) {
     this.element = element;
   }
 
-  resultChanged(newValue) {
+  valueChanged(newValue) {
 
       let goodResult = ['alert', 'alert-info', 'fa', 'fa-arrow-circle-o-up'];
       let badResult = ['alert', 'alert-danger', 'fa', 'fa-arrow-circle-o-down'];
