@@ -1,4 +1,4 @@
 import {createBenchmark} from '../container';
 
 export default createBenchmark(
-  (container, ctor) => container.registerTransient(ctor));
+  (container, ctor) => container.registerSingleton(ctor), 0, 1);
