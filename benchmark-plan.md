@@ -17,7 +17,7 @@
 * :white_check_mark: Cached parse of simple property expression
 * :white_check_mark: Parse a complex property expression
 * :white_check_mark: Cached parse of complex property expression
-* :white_medium_square: locate observers: elements, properties, computeds, custom
+* :white_check_mark: locate observers: elements, properties, computeds, custom
 * :white_medium_square: observe a single property: O.o and Setter
 * :white_medium_square: unobserve a single property: O.o and Setter
 * :white_medium_square: notify of property change: O.o and Setter
