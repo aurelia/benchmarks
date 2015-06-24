@@ -50,11 +50,17 @@ export default deferred => {
     locator.getObserver(object, 'getterSetter');
     locator.getObserver(object, 'computed');
     locator.getObserver(object, 'adapter');
+    locator.getObserver(object, 'undefinedProperty');
     object = document.createElement('input');
+    object.simple = 'hello world';
+    Object.defineProperty(object, 'getterSetter', { get: () => null, set: newValue => {} });
     locator.getObserver(object, 'value');
     locator.getObserver(object, 'checked');
     locator.getObserver(object, 'class');
     locator.getObserver(object, 'css');
+    locator.getObserver(object, 'simple');
+    locator.getObserver(object, 'getterSetter');
+    locator.getObserver(object, 'undefinedProperty');
   }
   deferred.resolve();
 };
