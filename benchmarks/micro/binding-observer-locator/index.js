@@ -32,7 +32,7 @@ class Test {
 
   @computedFrom('firstName', 'lastName')
   get computed() {
-    return `${firstName} ${lastName}`;
+    return `${this.firstName} ${this.lastName}`;
   }
 
   get adapter() {
@@ -43,24 +43,34 @@ class Test {
 var locator = new ObserverLocator(new TaskQueue(), new EventManager(), new DirtyChecker(), [new MockAdapter()]);
 
 export default deferred => {
-  var i = 10000, object;
+  var i = 10000, object, observer, cb = (newValue, oldValue) => {};
   while(i--) {
     object = new Test();
-    locator.getObserver(object, 'simple');
-    locator.getObserver(object, 'getterSetter');
-    locator.getObserver(object, 'computed');
-    locator.getObserver(object, 'adapter');
-    locator.getObserver(object, 'undefinedProperty');
+    observer = locator.getObserver(object, 'simple');
+    observer.subscribe(cb)();
+    observer = locator.getObserver(object, 'getterSetter');
+    observer.subscribe(cb)();
+    observer = locator.getObserver(object, 'computed');
+    observer.subscribe(cb)();
+    observer = locator.getObserver(object, 'adapter');
+    observer = locator.getObserver(object, 'undefinedProperty');
+    observer.subscribe(cb)();
+
     object = document.createElement('input');
     object.simple = 'hello world';
     Object.defineProperty(object, 'getterSetter', { get: () => null, set: newValue => {} });
-    locator.getObserver(object, 'value');
-    locator.getObserver(object, 'checked');
-    locator.getObserver(object, 'class');
-    locator.getObserver(object, 'css');
-    locator.getObserver(object, 'simple');
-    locator.getObserver(object, 'getterSetter');
-    locator.getObserver(object, 'undefinedProperty');
+    observer = locator.getObserver(object, 'value');
+    observer.subscribe(cb)();
+    observer = locator.getObserver(object, 'checked');
+    observer.subscribe(cb)();
+    observer = locator.getObserver(object, 'class');
+    observer = locator.getObserver(object, 'css');
+    observer = locator.getObserver(object, 'simple');
+    observer.subscribe(cb)();
+    observer = locator.getObserver(object, 'getterSetter');
+    observer.subscribe(cb)();
+    observer = locator.getObserver(object, 'undefinedProperty');
+    observer.subscribe(cb)();
   }
   deferred.resolve();
 };
