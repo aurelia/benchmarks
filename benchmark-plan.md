@@ -19,9 +19,9 @@
 * :white_check_mark: Cached parse of complex property expression
 * :white_check_mark: locate observers: elements, properties, computeds, custom
 * :white_check_mark: observe a single property: O.o and Setter
-* :white_medium_square: unobserve a single property: O.o and Setter
+* :white_check_mark: unobserve a single property: O.o and Setter
 * :white_medium_square: notify of property change: O.o and Setter
-* :white_medium_square: Given a binding instance, call "bind" with a particular source. Use a variety of simple and complex expressions, one-way, two-way and one-time bindings as well
+* :white_check_mark: Given a binding instance, call "bind" with a particular source. Use a variety of simple and complex expressions, one-way, two-way and one-time bindings as well
 * :white_check_mark: parse a string interpolation: single segment and multiple
 
 ### Templating (pre-load templates and resources)
