@@ -13,13 +13,15 @@
   "jspm": {
     "dependencies": {
       "async": "npm:async@^0.9.0",
-      "aurelia-bootstrapper": "github:aurelia/bootstrapper@^0.12.0",
-      "aurelia-dependency-injection": "github:aurelia/dependency-injection@^0.7.1",
-      "aurelia-framework": "github:aurelia/framework@^0.11.0",
-      "aurelia-http-client": "github:aurelia/http-client@^0.8.1",
-      "aurelia-router": "github:aurelia/router@^0.8.1",
-      "aurelia-templating": "github:aurelia/templating@^0.11.2",
-      "aurelia-templating-binding": "github:aurelia/templating-binding@^0.11.0",
+      "aurelia-binding": "github:aurelia/binding@^0.8.2",
+      "aurelia-bootstrapper": "github:aurelia/bootstrapper@^0.14.0",
+      "aurelia-dependency-injection": "github:aurelia/dependency-injection@^0.9.0",
+      "aurelia-framework": "github:aurelia/framework@^0.13.3",
+      "aurelia-http-client": "github:aurelia/http-client@^0.10.0",
+      "aurelia-router": "github:aurelia/router@^0.10.2",
+      "aurelia-task-queue": "github:aurelia/task-queue@^0.6.0",
+      "aurelia-templating": "github:aurelia/templating@^0.13.11",
+      "aurelia-templating-binding": "github:aurelia/templating-binding@^0.13.1",
       "bootstrap": "github:twbs/bootstrap@^3.3.4",
       "css": "github:systemjs/plugin-css@^0.1.11",
       "font-awesome": "npm:font-awesome@^4.3.0"
