@@ -26,10 +26,10 @@
 
 ### Templating (pre-load templates and resources)
 
-* :white_medium_square: compile/instantiate a view with no bindings or behaviors
-* :white_medium_square: compile/instantiate a view with bindings
-* :white_medium_square: compile/instantiate a view with behaviors
-* :white_medium_square: compile/instantiate a view with bindings and behaviors
+* :white_check_mark: compile/instantiate a view with no bindings or behaviors
+* :white_check_mark: compile/instantiate a view with bindings
+* :white_check_mark: compile/instantiate a view with behaviors
+* :white_check_mark: compile/instantiate a view with bindings and behaviors
 * :white_medium_square: compiler/instantiate a view with content selectors
 
 ## Macro Benchmarks
