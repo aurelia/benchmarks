@@ -9,8 +9,7 @@ import {configure as configureBindingLanguage} from 'aurelia-templating-binding'
 var container = new Container(),
     resourceRegistry = document.body.aurelia.container.get(ResourceRegistry),
     viewCompiler,
-		resources,
-		executionContext = {};
+		resources;
 
 configureBindingLanguage({ container: container });
 
@@ -35,7 +34,7 @@ export function createBenchmark(benchType, templateOrFragment) {
 			return deferred => {
 			  var i = iterations;
 			  while(i--) {
-			    viewFactory.create(container, executionContext);
+			    viewFactory.create(container, new ExecutionContext());
 			  }
 				deferred.resolve();
 			};
@@ -43,7 +42,7 @@ export function createBenchmark(benchType, templateOrFragment) {
 			return deferred => {
 			  var i = iterations;
 			  while(i--) {
-			    viewCompiler.compile(templateOrFragment, resources).create(container, executionContext);
+			    viewCompiler.compile(templateOrFragment, resources).create(container, new ExecutionContext());
 			  }
 				deferred.resolve();
 			};
@@ -154,4 +153,38 @@ export var template = {
 		    <point foo x.bind="m" y.bind="z"></point>
       </section>
 		</template>`
+}
+
+class ExecutionContext {
+  a = 'a';
+  b = 'b';
+  c = 'c';
+  d = 'd';
+  e = 'e';
+  f = 'f';
+  g = 'g';
+  h = 'h';
+  i = 'i';
+  j = 'j';
+  k = 'k';
+  l = 'l';
+  m = 'm';
+  n = 'n';
+  o = 'o';
+  p = 'p';
+  q = 'q';
+  r = 'r';
+  s = 's';
+  t = 't';
+  u = 'u';
+  v = 'v';
+  w = 'w';
+  x = 'x';
+  y = 'y';
+  z = 'z';
+  dolar = 'dolar';
+  brisket = 'brisket';
+  tip = 'tip';
+  navs = [{ href: "#home", title: "Home"}, { href: "#about", title: "About"}, { href: "#contact", title: "Contact"}];
+  ads = [{ href: "#buy-this", title: "Buy This!"}, { href: "#buy-that", title: "Buy That!"}, { href: "#buy-those", title: "Buy Those!"}];
 }
