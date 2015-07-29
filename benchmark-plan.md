@@ -20,7 +20,7 @@
 * :white_check_mark: locate observers: elements, properties, computeds, custom
 * :white_check_mark: observe a single property: O.o and Setter
 * :white_check_mark: unobserve a single property: O.o and Setter
-* :white_medium_square: notify of property change: O.o and Setter
+* :white_check_mark: notify of property change: O.o and Setter
 * :white_check_mark: Given a binding instance, call "bind" with a particular source. Use a variety of simple and complex expressions, one-way, two-way and one-time bindings as well
 * :white_check_mark: parse a string interpolation: single segment and multiple
 
@@ -30,7 +30,7 @@
 * :white_check_mark: compile/instantiate a view with bindings
 * :white_check_mark: compile/instantiate a view with behaviors
 * :white_check_mark: compile/instantiate a view with bindings and behaviors
-* :white_medium_square: compiler/instantiate a view with content selectors
+* :white_check_mark: compiler/instantiate a view with content selectors
 * :white_medium_square: compiler/instantiate a view with template parts
 * :white_medium_square: compiler/instantiate a view with surrogate behaviors
 

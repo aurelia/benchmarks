@@ -152,7 +152,16 @@ export var template = {
 		    <point baz x.bind="l" y.bind="y"></point>
 		    <point foo x.bind="m" y.bind="z"></point>
       </section>
-		</template>`
+		</template>`,
+
+  contentSelectors:
+    `<template>
+      <content-selectors>
+        <modal-header>foo</modal-header>
+        <modal-body>bar</modal-body>
+        <modal-footer>baz</modal-footer>
+      </content-selectors>
+    </template>`
 }
 
 class ExecutionContext {
