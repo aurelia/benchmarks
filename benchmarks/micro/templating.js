@@ -169,6 +169,17 @@ export var template = {
         <li>\${item.name} \${item.diameter}</li>
       </template>
     </template-parts>`,
+
+  compileSurrogateBehaviors:
+    `<template class="\${foo} \${bar} \${baz}" hello.bind="world">
+      <div>
+      </div>
+    </template>`,
+
+  createSurrogateBehaviors:
+    `<template>
+      <surrogate-behaviors></surrogate-behaviors>
+    </template>`
 }
 
 class ExecutionContext {
