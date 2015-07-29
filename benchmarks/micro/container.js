@@ -1,8 +1,12 @@
-import {Container} from 'aurelia-framework';
+import {Container, Metadata, TransientRegistration} from 'aurelia-framework';
 
-var ctors = [], max = 10000, i = max;
+var ctors = [], metadataCtors = [], ctor, max = 10000, i = max;
 while(i--) {
-  ctors.push((function() { return () => null; })());
+  ctor = (function() { return () => null; })();
+  ctors.push(ctor);
+  ctor = (function() { return () => null; })();
+  Metadata.define('aurelia:registration', new TransientRegistration(), ctor);
+  metadataCtors.push(ctor);
 }
 
 /**
@@ -11,7 +15,7 @@ while(i--) {
 * @param {number} registerDepth - The child container depth to perform the registrations (default = 0).
 * @param {number} resolveDepth - The child container depth to perform the container.get (default = 0).
 */
-export function createBenchmark(register, registerDepth = 0, resolveDepth = 0) {
+export function createBenchmark(register, registerDepth = 0, resolveDepth = 0, metadata = false) {
   return deferred => {
     var registerContainer, resolveContainer, ctor;
 
@@ -29,13 +33,13 @@ export function createBenchmark(register, registerDepth = 0, resolveDepth = 0) {
 
     i = max;
     while(i--) {
-      ctor = ctors[i];
+      ctor = metadata ? metadataCtors[i] : ctors[i];
       register(registerContainer, ctor);
     }
 
     i = max;
     while(i--) {
-      ctor = ctors[i];
+      ctor = metadata ? metadataCtors[i] : ctors[i];
       resolveContainer.get(ctor);
     }
 

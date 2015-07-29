@@ -9,7 +9,7 @@
 * :white_check_mark: child container creation
 * :white_check_mark: resolve transient, singleton, instance through child, when they are registered with the parent
 * :white_check_mark: resolve transient, singleton, instance through 4th level child, when they are registered with the root
-* :white_medium_square: auto-registration: with and without registration metadata
+* :white_check_mark: auto-registration: with and without registration metadata
 
 ### Binding
 
