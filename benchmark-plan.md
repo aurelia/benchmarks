@@ -31,7 +31,7 @@
 * :white_check_mark: compile/instantiate a view with behaviors
 * :white_check_mark: compile/instantiate a view with bindings and behaviors
 * :white_check_mark: compiler/instantiate a view with content selectors
-* :white_medium_square: compiler/instantiate a view with template parts
+* :white_check_mark: compiler/instantiate a view with template parts
 * :white_medium_square: compiler/instantiate a view with surrogate behaviors
 
 ## Macro Benchmarks

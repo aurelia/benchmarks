@@ -161,7 +161,14 @@ export var template = {
         <modal-body>bar</modal-body>
         <modal-footer>baz</modal-footer>
       </content-selectors>
-    </template>`
+    </template>`,
+
+  templateParts:
+    `<template-parts items.bind="planets">
+      <template replace-part="item-template">
+        <li>\${item.name} \${item.diameter}</li>
+      </template>
+    </template-parts>`,
 }
 
 class ExecutionContext {
@@ -196,4 +203,13 @@ class ExecutionContext {
   tip = 'tip';
   navs = [{ href: "#home", title: "Home"}, { href: "#about", title: "About"}, { href: "#contact", title: "Contact"}];
   ads = [{ href: "#buy-this", title: "Buy This!"}, { href: "#buy-that", title: "Buy That!"}, { href: "#buy-those", title: "Buy Those!"}];
+  planets = [
+    { name: 'Mercury', diameter: 3032 },
+    { name: 'Venus', diameter: 7521 },
+    { name: 'Earth', diameter: 7926 },
+    { name: 'Mars', diameter: 4222 },
+    { name: 'Jupiter', diameter: 88846 },
+    { name: 'Saturn', diameter: 74898 },
+    { name: 'Uranus', diameter: 31763 },
+    { name: 'Neptune', diameter: 30778 }];
 }
