@@ -1,0 +1,18 @@
+<template>
+  <table>
+    <thead>
+      <tr>
+        <th>Planet</th>
+        <th>Diameter (miles)</th>
+        <th>Distance to Sun (miles)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr repeat.for="planet of planets">
+        <td>${planet.name}</td>
+        <td>${planet.diameter}</td>
+        <td>${planet.distance}</td>
+      </tr>
+    </tbody>
+  </table>
+</template>
