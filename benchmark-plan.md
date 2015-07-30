@@ -36,7 +36,7 @@
 
 ## Macro Benchmarks
 
-* :white_medium_square: Render a simple form
+* :white_check_mark: Render a simple form
 * :white_medium_square: Render a complex form
-* :white_medium_square: Render a simple table
+* :white_check_mark: Render a simple table
 * :white_medium_square: Render a complex table
