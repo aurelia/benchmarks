@@ -5,7 +5,7 @@ var app = express();
 app.use(bodyParser.json())
 app.use(require('./controllers/static.js'));
 app.use('/api/tests', require('./controllers/tests.js'));
-app.use('/api/results', require('./controllers/results.js'));
+app.use('/api/tags', require('./controllers/tags.js'));
 
 var port = 8080;
 app.listen(port, function(){

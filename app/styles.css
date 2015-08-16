@@ -1,0 +1,9 @@
+.tagged-result {
+  font-weight: bold;
+}
+
+.user-agent {
+  display: inline-block;
+  width: 15em;
+  text-align: right;
+}

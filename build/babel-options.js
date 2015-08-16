@@ -6,6 +6,8 @@ module.exports = {
   stage:2,
   optional: [
     "es7.decorators",
-    "es7.classProperties"
+    "es7.classProperties",
+    "es7.functionBind",
+    "runtime"
   ]
 };

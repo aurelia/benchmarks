@@ -2,21 +2,10 @@
 <html>
 <head>
   <title>Simple Form</title>
-  <script src="/lib/benchmark.js"></script>
 </head>
 <body aurelia-app="main">
   <script src="/jspm_packages/system.js"></script>
   <script src="/config.js"></script>
-  <script>
-    System.config({
-      "paths": {
-        "github:*": "/jspm_packages/github/*.js",
-        "npm:*": "/jspm_packages/npm/*.js",
-        "benchmarks/*": "/dist/benchmarks/*.js",
-        "*": "*.js"
-      }
-    });
-  </script>
   <script>
     System.import('aurelia-bootstrapper');
   </script>

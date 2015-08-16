@@ -8,11 +8,19 @@ To run, follow these commands.
 
 ```shell
 npm install
-jspm install -y
+jspm install
 gulp watch
 ```
 
 Browse to [http://localhost:3000](http://localhost:3000).
+
+**Note**
+Enable Chrome's microsecond timer with --enable-benchmarking
+
+Windows:
+```shell
+start chrome --enable-benchmarking
+```
 
 ## Adding Micro Benchmarks
 
@@ -27,7 +35,7 @@ will take a deferred object as a parameter, and the function must call `deferred
 
 ```
 export default (deferred) => {
-    setTimeout(() => deferred.resolve(), 1000);
+  setTimeout(() => deferred.resolve(), 1000);
 }
 ```
 ## Adding Macro Benchmarks
@@ -51,29 +59,18 @@ from configuration start till the Aurelia framework fires the `aurelia-composed`
 
 ```
 document.addEventListener("aurelia-composed", function (e) {
-        parent.postMessage("test-end", "*");
-    }, false);
+    parent.postMessage("test-end", "*");
+  }, false);
 
 export function configure(aurelia) {
 
-    parent.postMessage("test-start", "*");
+  parent.postMessage("test-start", "*");
 
-    aurelia.use
-        .defaultBindingLanguage()
-        .defaultResources()
-        .eventAggregator();
+  aurelia.use
+    .defaultBindingLanguage()
+    .defaultResources()
+    .eventAggregator();
 
-    aurelia.start().then(a => a.setRoot('app', document.body));
+  aurelia.start().then(a => a.setRoot('app', document.body));
 }
 ```
-
-**Note**
-Enable Chrome's microsecond timer with --enable-benchmarking
-
-**Todo**
-observe a simple property w/ O.o
-observe a simple property w/o O.o
-observe an input element's value
-observe an SVG element
-observe a property with dependencies
-observe a property with custom adapter

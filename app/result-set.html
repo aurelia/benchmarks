@@ -1,0 +1,5 @@
+<template>
+  <span repeat.for="result of results" class.bind="$parent.textClass(result) + (result.tag ? ' tagged-result' : '')">
+    ${result.period.toFixed(4)}&nbsp;
+  </span>
+</template>

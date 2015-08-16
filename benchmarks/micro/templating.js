@@ -1,13 +1,11 @@
 import {Container} from 'aurelia-dependency-injection';
 import {
   ViewCompiler,
-  ViewResources,
-  ResourceRegistry
+  ViewResources
 } from 'aurelia-templating';
 import {configure as configureBindingLanguage} from 'aurelia-templating-binding';
 
 var container = new Container(),
-    resourceRegistry = document.body.aurelia.container.get(ResourceRegistry),
     viewCompiler,
 		resources;
 
@@ -15,7 +13,7 @@ configureBindingLanguage({ container: container });
 
 viewCompiler = container.get(ViewCompiler);
 
-resources = new ViewResources(resourceRegistry, 'app.html');
+resources = document.body.aurelia.container.get(ViewResources);
 
 const iterations = 1000;
 

@@ -24,5 +24,6 @@ module.exports = {
     getChildren: getChildren,
     make: make,
     writeFile: writeFile,
-    getFileNames: getFileNames
+    getFileNames: getFileNames,
+    exists: function(path) { return fs.existsSync(path); }
 };
