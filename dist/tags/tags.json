@@ -1,1 +1,394 @@
-[]
+[
+  {
+    "name": "binding-bind",
+    "timestamp": "2015-08-27T14:55:28.000Z",
+    "userAgent": "Chrome on Windows 8.1",
+    "period": 0.025412628477924762,
+    "tag": "baseline"
+  },
+  {
+    "name": "binding-interpolation-long",
+    "timestamp": "2015-08-27T14:55:50.000Z",
+    "userAgent": "Chrome on Windows 8.1",
+    "period": 0.5166485714285695,
+    "tag": "baseline"
+  },
+  {
+    "name": "binding-interpolation-short",
+    "timestamp": "2015-08-27T14:56:01.000Z",
+    "userAgent": "Chrome on Windows 8.1",
+    "period": 0.19395923333304382,
+    "tag": "baseline"
+  },
+  {
+    "name": "binding-observer-locator",
+    "timestamp": "2015-08-27T14:56:17.000Z",
+    "userAgent": "Chrome on Windows 8.1",
+    "period": 2.2481748571429176,
+    "tag": "baseline"
+  },
+  {
+    "name": "binding-parse-cached",
+    "timestamp": "2015-08-27T14:56:23.000Z",
+    "userAgent": "Chrome on Windows 8.1",
+    "period": 0.004614930047692552,
+    "tag": "baseline"
+  },
+  {
+    "name": "binding-parse-complex",
+    "timestamp": "2015-08-27T14:56:31.000Z",
+    "userAgent": "Chrome on Windows 8.1",
+    "period": 0.44134087500015085,
+    "tag": "baseline"
+  },
+  {
+    "name": "binding-parse-simple",
+    "timestamp": "2015-08-27T14:56:36.000Z",
+    "userAgent": "Chrome on Windows 8.1",
+    "period": 0.027153176470606277,
+    "tag": "baseline"
+  },
+  {
+    "name": "binding-bind",
+    "timestamp": "2015-08-27T14:56:27.000Z",
+    "userAgent": "Firefox on Windows 8.1",
+    "period": 0.006409440091630803,
+    "tag": "baseline"
+  },
+  {
+    "name": "binding-interpolation-long",
+    "timestamp": "2015-08-27T14:56:33.000Z",
+    "userAgent": "Firefox on Windows 8.1",
+    "period": 0.12632052823412368,
+    "tag": "baseline"
+  },
+  {
+    "name": "binding-interpolation-short",
+    "timestamp": "2015-08-27T14:56:39.000Z",
+    "userAgent": "Firefox on Windows 8.1",
+    "period": 0.1560985331504579,
+    "tag": "baseline"
+  },
+  {
+    "name": "binding-observer-locator",
+    "timestamp": "2015-08-27T14:56:55.000Z",
+    "userAgent": "Firefox on Windows 8.1",
+    "period": 2.052734212991535,
+    "tag": "baseline"
+  },
+  {
+    "name": "binding-parse-cached",
+    "timestamp": "2015-08-27T14:57:01.000Z",
+    "userAgent": "Firefox on Windows 8.1",
+    "period": 0.00617069574112231,
+    "tag": "baseline"
+  },
+  {
+    "name": "binding-parse-complex",
+    "timestamp": "2015-08-27T14:57:15.000Z",
+    "userAgent": "Firefox on Windows 8.1",
+    "period": 1.0799264271108653,
+    "tag": "baseline"
+  },
+  {
+    "name": "binding-parse-simple",
+    "timestamp": "2015-08-27T14:57:21.000Z",
+    "userAgent": "Firefox on Windows 8.1",
+    "period": 0.093691526034509,
+    "tag": "baseline"
+  },
+  {
+    "name": "binding-bind",
+    "timestamp": "2015-08-27T14:57:05.000Z",
+    "userAgent": "Chrome on Windows 8.1",
+    "period": 0.006644818302377576,
+    "tag": "callables"
+  },
+  {
+    "name": "binding-interpolation-long",
+    "timestamp": "2015-08-27T14:57:10.000Z",
+    "userAgent": "Chrome on Windows 8.1",
+    "period": 0.048577707547217804,
+    "tag": "callables"
+  },
+  {
+    "name": "binding-interpolation-short",
+    "timestamp": "2015-08-27T14:57:17.000Z",
+    "userAgent": "Chrome on Windows 8.1",
+    "period": 0.25157391666645706,
+    "tag": "callables"
+  },
+  {
+    "name": "binding-observer-locator",
+    "timestamp": "2015-08-27T14:57:33.000Z",
+    "userAgent": "Chrome on Windows 8.1",
+    "period": 2.740961333333272,
+    "tag": "callables"
+  },
+  {
+    "name": "binding-parse-cached",
+    "timestamp": "2015-08-27T14:57:42.000Z",
+    "userAgent": "Chrome on Windows 8.1",
+    "period": 0.00445904085801935,
+    "tag": "callables"
+  },
+  {
+    "name": "binding-parse-complex",
+    "timestamp": "2015-08-27T14:57:49.000Z",
+    "userAgent": "Chrome on Windows 8.1",
+    "period": 0.43278073333325057,
+    "tag": "callables"
+  },
+  {
+    "name": "binding-parse-simple",
+    "timestamp": "2015-08-27T14:57:55.000Z",
+    "userAgent": "Chrome on Windows 8.1",
+    "period": 0.0235424952380567,
+    "tag": "callables"
+  },
+  {
+    "name": "binding-bind",
+    "timestamp": "2015-08-27T14:58:40.000Z",
+    "userAgent": "Firefox on Windows 8.1",
+    "period": 0.005807321994683347,
+    "tag": "callables"
+  },
+  {
+    "name": "binding-interpolation-long",
+    "timestamp": "2015-08-27T14:58:46.000Z",
+    "userAgent": "Firefox on Windows 8.1",
+    "period": 0.1017324662620739,
+    "tag": "callables"
+  },
+  {
+    "name": "binding-interpolation-short",
+    "timestamp": "2015-08-27T14:58:52.000Z",
+    "userAgent": "Firefox on Windows 8.1",
+    "period": 0.17210084871746406,
+    "tag": "callables"
+  },
+  {
+    "name": "binding-observer-locator",
+    "timestamp": "2015-08-27T14:59:07.000Z",
+    "userAgent": "Firefox on Windows 8.1",
+    "period": 2.031001640811538,
+    "tag": "callables"
+  },
+  {
+    "name": "binding-parse-cached",
+    "timestamp": "2015-08-27T14:59:14.000Z",
+    "userAgent": "Firefox on Windows 8.1",
+    "period": 0.005585906528473443,
+    "tag": "callables"
+  },
+  {
+    "name": "binding-parse-complex",
+    "timestamp": "2015-08-27T14:59:25.000Z",
+    "userAgent": "Firefox on Windows 8.1",
+    "period": 1.1499354973124767,
+    "tag": "callables"
+  },
+  {
+    "name": "binding-parse-simple",
+    "timestamp": "2015-08-27T14:59:31.000Z",
+    "userAgent": "Firefox on Windows 8.1",
+    "period": 0.0765037228044804,
+    "tag": "callables"
+  },
+  {
+    "name": "binding-bind",
+    "timestamp": "2015-08-27T14:56:47.000Z",
+    "userAgent": "IE on Windows 8.1",
+    "period": 0.004171327816574379,
+    "tag": "baseline"
+  },
+  {
+    "name": "binding-interpolation-long",
+    "timestamp": "2015-08-27T14:56:52.000Z",
+    "userAgent": "IE on Windows 8.1",
+    "period": 0.07565538866530518,
+    "tag": "baseline"
+  },
+  {
+    "name": "binding-interpolation-short",
+    "timestamp": "2015-08-27T14:56:59.000Z",
+    "userAgent": "IE on Windows 8.1",
+    "period": 0.28398207831720174,
+    "tag": "baseline"
+  },
+  {
+    "name": "binding-observer-locator",
+    "timestamp": "2015-08-27T14:58:14.000Z",
+    "userAgent": "IE on Windows 8.1",
+    "period": 3.578650620856867,
+    "tag": "baseline"
+  },
+  {
+    "name": "binding-parse-cached",
+    "timestamp": "2015-08-27T14:58:20.000Z",
+    "userAgent": "IE on Windows 8.1",
+    "period": 0.005827268423429508,
+    "tag": "baseline"
+  },
+  {
+    "name": "binding-parse-complex",
+    "timestamp": "2015-08-27T14:58:29.000Z",
+    "userAgent": "IE on Windows 8.1",
+    "period": 0.9357637068316705,
+    "tag": "baseline"
+  },
+  {
+    "name": "binding-parse-simple",
+    "timestamp": "2015-08-27T14:58:35.000Z",
+    "userAgent": "IE on Windows 8.1",
+    "period": 0.07521323384487164,
+    "tag": "baseline"
+  },
+  {
+    "name": "binding-bind",
+    "timestamp": "2015-08-27T14:59:30.000Z",
+    "userAgent": "Chrome on Windows 8.1",
+    "period": 0.0065388946666545275,
+    "tag": "no-array"
+  },
+  {
+    "name": "binding-interpolation-long",
+    "timestamp": "2015-08-27T14:59:36.000Z",
+    "userAgent": "Chrome on Windows 8.1",
+    "period": 0.04526452586201525,
+    "tag": "no-array"
+  },
+  {
+    "name": "binding-interpolation-short",
+    "timestamp": "2015-08-27T14:59:42.000Z",
+    "userAgent": "Chrome on Windows 8.1",
+    "period": 0.19946000000006914,
+    "tag": "no-array"
+  },
+  {
+    "name": "binding-observer-locator",
+    "timestamp": "2015-08-27T14:59:57.000Z",
+    "userAgent": "Chrome on Windows 8.1",
+    "period": 2.128814857143094,
+    "tag": "no-array"
+  },
+  {
+    "name": "binding-parse-cached",
+    "timestamp": "2015-08-27T15:00:05.000Z",
+    "userAgent": "Chrome on Windows 8.1",
+    "period": 0.004642127878786679,
+    "tag": "no-array"
+  },
+  {
+    "name": "binding-parse-complex",
+    "timestamp": "2015-08-27T15:00:12.000Z",
+    "userAgent": "Chrome on Windows 8.1",
+    "period": 0.42089712500023957,
+    "tag": "no-array"
+  },
+  {
+    "name": "binding-parse-simple",
+    "timestamp": "2015-08-27T15:00:18.000Z",
+    "userAgent": "Chrome on Windows 8.1",
+    "period": 0.0234122047619362,
+    "tag": "no-array"
+  },
+  {
+    "name": "binding-bind",
+    "timestamp": "2015-08-27T14:59:53.000Z",
+    "userAgent": "Firefox on Windows 8.1",
+    "period": 0.07391448379092906,
+    "tag": "no-array"
+  },
+  {
+    "name": "binding-interpolation-long",
+    "timestamp": "2015-08-27T15:00:03.000Z",
+    "userAgent": "Firefox on Windows 8.1",
+    "period": 0.10858896861990858,
+    "tag": "no-array"
+  },
+  {
+    "name": "binding-interpolation-short",
+    "timestamp": "2015-08-27T15:00:09.000Z",
+    "userAgent": "Firefox on Windows 8.1",
+    "period": 0.19387860977123114,
+    "tag": "no-array"
+  },
+  {
+    "name": "binding-observer-locator",
+    "timestamp": "2015-08-27T15:00:25.000Z",
+    "userAgent": "Firefox on Windows 8.1",
+    "period": 2.155360055017676,
+    "tag": "no-array"
+  },
+  {
+    "name": "binding-parse-cached",
+    "timestamp": "2015-08-27T15:00:31.000Z",
+    "userAgent": "Firefox on Windows 8.1",
+    "period": 0.005377846219313422,
+    "tag": "no-array"
+  },
+  {
+    "name": "binding-parse-complex",
+    "timestamp": "2015-08-27T15:00:42.000Z",
+    "userAgent": "Firefox on Windows 8.1",
+    "period": 1.1609156244643835,
+    "tag": "no-array"
+  },
+  {
+    "name": "binding-parse-simple",
+    "timestamp": "2015-08-27T15:00:48.000Z",
+    "userAgent": "Firefox on Windows 8.1",
+    "period": 0.06818604541006826,
+    "tag": "no-array"
+  },
+  {
+    "name": "binding-bind",
+    "timestamp": "2015-08-27T15:00:41.636Z",
+    "userAgent": "IE on Windows 8.1",
+    "period": 0.004338567925566466,
+    "tag": "no-array"
+  },
+  {
+    "name": "binding-interpolation-long",
+    "timestamp": "2015-08-27T15:00:47.343Z",
+    "userAgent": "IE on Windows 8.1",
+    "period": 0.0859132563187726,
+    "tag": "no-array"
+  },
+  {
+    "name": "binding-interpolation-short",
+    "timestamp": "2015-08-27T15:00:53.954Z",
+    "userAgent": "IE on Windows 8.1",
+    "period": 0.2753747042918366,
+    "tag": "no-array"
+  },
+  {
+    "name": "binding-observer-locator",
+    "timestamp": "2015-08-27T15:02:00.067Z",
+    "userAgent": "IE on Windows 8.1",
+    "period": 3.261022425728897,
+    "tag": "no-array"
+  },
+  {
+    "name": "binding-parse-cached",
+    "timestamp": "2015-08-27T15:02:05.756Z",
+    "userAgent": "IE on Windows 8.1",
+    "period": 0.005947115702638138,
+    "tag": "no-array"
+  },
+  {
+    "name": "binding-parse-complex",
+    "timestamp": "2015-08-27T15:02:15.348Z",
+    "userAgent": "IE on Windows 8.1",
+    "period": 0.9471001186389593,
+    "tag": "no-array"
+  },
+  {
+    "name": "binding-parse-simple",
+    "timestamp": "2015-08-27T15:02:20.927Z",
+    "userAgent": "IE on Windows 8.1",
+    "period": 0.07659240911363813,
+    "tag": "no-array"
+  }
+]

@@ -7,6 +7,7 @@ import {parseJson} from '../util/parse-json';
 @inject(HttpClient, ResultFactory)
 export class ResultRepository {
   results = {};
+  tags = [];
   userAgents = [userAgent];
 
   constructor(http, resultFactory) {
@@ -28,18 +29,31 @@ export class ResultRepository {
   }
 
   add(result) {
-    let results = this.results,
-        name = result.name,
-        userAgent = result.userAgent;
+    let results = this.results;
+    let name = result.name;
+    let userAgent = result.userAgent;
+
+    // graph of all results
     if (!results[name]) {
       results[name] = {};
     }
     if (!results[name][userAgent]) {
       results[name][userAgent] = [result];
     } else {
-      results[name][userAgent].unshift(result);
+      let subset = results[name][userAgent];
+      // already cataloged?
+      if (subset.find(r => +r.timestamp === +result.timestamp)) {
+        return;
+      }
+      subset.unshift(result);
     }
-    // maintain list of userAgents
+
+    // array of tags
+    if (result.tag) {
+      this.tags.push(result);
+    }
+
+    // list of userAgents
     if (this.userAgents.indexOf(userAgent) === -1) {
       this.userAgents.push(userAgent);
     }

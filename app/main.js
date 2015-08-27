@@ -17,6 +17,6 @@ export function configure(aurelia) {
   iframe.style.display = 'none';
   aurelia.container.registerInstance(HTMLIFrameElement, iframe);
 
-  aurelia.start().then(a => a.setRoot('app'))
+  aurelia.start().then(a => a.setRoot('ui/app'))
     .then(() => document.body.appendChild(iframe)); // add the iframe to the body after the app is composed.
 }

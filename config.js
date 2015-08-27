@@ -40,6 +40,7 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.8.20",
     "benchmark": "npm:benchmark@1.0.0",
     "bootstrap": "github:twbs/bootstrap@4.0.0-alpha",
+    "chartist": "npm:chartist@0.9.4",
     "core-js": "npm:core-js@0.9.18",
     "css": "github:systemjs/plugin-css@0.1.13",
     "faisalman/ua-parser-js": "github:faisalman/ua-parser-js@0.7.9",

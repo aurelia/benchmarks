@@ -1,0 +1,14 @@
+<template>
+  <nav class="navbar navbar-fixed-top navbar-light bg-faded">
+    <a class="navbar-brand" href="#">Benchmarks</a>
+    <ul class="nav navbar-nav">
+      <li class="nav-item" repeat.for="route of router.navigation" class.bind="route.isActive ? 'active' : ''">
+        <a class="nav-link" href.bind="route.href">${route.title}</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="host container">
+    <router-view></router-view>
+  </div>
+</template>

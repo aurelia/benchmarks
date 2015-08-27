@@ -1,9 +1,32 @@
-.tagged-result {
+.host {
+  margin-top: 4em;
+}
+
+/**
+ * harness view
+ */
+.harness .tagged-result {
   font-weight: bold;
 }
 
-.user-agent {
+.harness .user-agent {
   display: inline-block;
   width: 15em;
   text-align: right;
 }
+
+.harness th > form {
+  font-weight: normal;
+}
+
+.harness .result-set-container {
+  width: 0;
+  min-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/**
+ * results view
+ */

@@ -1,0 +1,52 @@
+<template>
+  <require from="./chart"></require>
+
+  <h1>Results</h1>
+
+  <section class="results">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-block">
+            <h4 class="card-title">User Agents</h4>
+            <ul class="list-unstyled">
+              <li repeat.for="userAgent of userAgents">
+                <label>
+                  <input type="checkbox" model.bind="userAgent" checked.bind="$parent.selectedUserAgents"
+                         click.delegate="$parent.filterClicked()">
+                  ${userAgent}
+                </label>
+              </li>
+            </ul>
+          <!-- </div>
+          <div class="card-block"> -->
+            <h4 class="card-title">Benchmarks</h4>
+            <ul class="list-unstyled">
+              <li>
+                <form class="form-inline">
+                  <input type="checkbox" checked.bind="allDefinitionsSelected" click.delegate="filterClicked()"
+                         indeterminate.bind="selectedDefinitions.length && selectedDefinitions.length < filteredDefinitions.length">
+                  <input type="text" class="form-control" placeholder="Search" value.bind="definitionFilter">
+                </form>
+              </li>
+              <li repeat.for="definition of filteredDefinitions">
+                <label>
+                  <input type="checkbox" model.bind="definition" checked.bind="$parent.selectedDefinitions"
+                         click.delegate="$parent.filterClicked()">
+                  ${definition.name}
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <div class="card">
+          <div class="card-block">
+            <chart type="Line" data.bind="chartData" options.bind="chartOptions"></chart>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>

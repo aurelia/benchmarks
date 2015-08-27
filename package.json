@@ -36,6 +36,7 @@
       "aurelia-templating-router": "github:aurelia/templating-router@^0.15.0",
       "benchmark": "npm:benchmark@^1.0.0",
       "bootstrap": "github:twbs/bootstrap@4.0.0-alpha",
+      "chartist": "npm:chartist@^0.9.4",
       "css": "github:systemjs/plugin-css@^0.1.11",
       "faisalman/ua-parser-js": "github:faisalman/ua-parser-js@^0.7.9"
     },
