@@ -23,7 +23,7 @@ export default deferred => {
   var i = expressions.length, j, expression;
   while(i--) {
     expression = expressions[i];
-    j = 10000;
+    j = 100;
     while(j--) {
       language.parseContent(resources, 'textContent', expression);
     }

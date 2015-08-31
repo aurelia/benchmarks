@@ -40,4 +40,8 @@ export class Harness extends BenchmarkViewModel {
       this.selectedDefinitions.splice(index, 1);
     }
   }
+
+  canDeactivate() {
+    return this.coordinator.active === null;
+  }
 }

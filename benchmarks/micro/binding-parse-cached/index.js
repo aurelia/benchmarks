@@ -7,7 +7,7 @@ parser.parse(simple);
 parser.parse(complex);
 
 export default deferred => {
-  var i = 10000;
+  var i = 100;
   while(i--) {
     parser.parse(simple);
     parser.parse(complex);

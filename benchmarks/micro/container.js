@@ -1,6 +1,6 @@
 import {Container, Metadata, TransientRegistration} from 'aurelia-framework';
 
-var ctors = [], metadataCtors = [], ctor, max = 10000, i = max;
+var ctors = [], metadataCtors = [], ctor, max = 100, i = max;
 while(i--) {
   ctor = (function() { return () => null; })();
   ctors.push(ctor);

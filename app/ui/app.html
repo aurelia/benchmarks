@@ -5,6 +5,7 @@
       <li class="nav-item" repeat.for="route of router.navigation" class.bind="route.isActive ? 'active' : ''">
         <a class="nav-link" href.bind="route.href">${route.title}</a>
       </li>
+      <em class="running-indicator text-info pull-right" show.bind="coordinator.active">Running ${coordinator.active.name}...</em>
     </ul>
   </nav>
 

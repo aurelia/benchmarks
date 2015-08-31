@@ -43,7 +43,7 @@ class Test {
 var locator = new ObserverLocator(new TaskQueue(), new EventManager(), new DirtyChecker(), [new MockAdapter()]);
 
 export default deferred => {
-  var i = 10000, object, observer, cb = (newValue, oldValue) => {};
+  var i = 100, object, observer, cb = (newValue, oldValue) => {};
   while(i--) {
     object = new Test();
     observer = locator.getObserver(object, 'simple');

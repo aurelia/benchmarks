@@ -1,7 +1,7 @@
 import {Parser} from 'aurelia-framework';
 
 var expressions = [], i;
-for(i = 0; i < 10000; i++) {
+for(i = 0; i < 100; i++) {
   expressions.push('memberAccessExpression' + i);
 }
 

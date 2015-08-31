@@ -15,7 +15,7 @@ viewCompiler = container.get(ViewCompiler);
 
 resources = document.body.aurelia.container.get(ViewResources);
 
-const iterations = 1000;
+const iterations = 100;
 
 export function createBenchmark(benchType, templateOrFragment) {
 	switch(benchType) {
@@ -162,11 +162,13 @@ export var template = {
     </template>`,
 
   templateParts:
-    `<template-parts items.bind="planets">
-      <template replace-part="item-template">
-        <li>\${item.name} \${item.diameter}</li>
-      </template>
-    </template-parts>`,
+    `<template>
+      <template-parts items.bind="planets">
+        <template replace-part="item-template">
+          <li>\${item.name} \${item.diameter}</li>
+        </template>
+      </template-parts>
+    </template>`,
 
   compileSurrogateBehaviors:
     `<template class="\${foo} \${bar} \${baz}" hello.bind="world">

@@ -2,7 +2,7 @@ import {Parser} from 'aurelia-framework';
 
 var expressions = [], i;
 
-for(i = 0; i < 5000; i++) {
+for(i = 0; i < 100; i++) {
   expressions.push('a.path.expression' + i);
   expressions.push('accessKeyedExpression[' + i + ']');
   expressions.push('accessKeyedExpression[' + i + '].and.a.path.expression');

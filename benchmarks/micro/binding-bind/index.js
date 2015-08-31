@@ -18,7 +18,7 @@ var parser = new Parser(),
       parser.parse('a ? conditional : expression'),
       parser.parse('another ? more.complex : conditional[0].expression'),
       parser.parse('a | converter:expression'),
-      parser.parse('another.more[0].complex | converter:expression:0'),  
+      parser.parse('another.more[0].complex | converter:expression:0'),
     ],
     modes = [bindingMode.oneTime, bindingMode.oneWay, bindingMode.twoWay],
     bindingExpressions = [],
@@ -34,7 +34,7 @@ function getSource() {
     conditional: [{ expression: 'hello world' }],
     expression: 'hello world',
     another: { more: [{ complex: 'hello world' }] },
-    more: { complex: 'hello world' },  
+    more: { complex: 'hello world' },
   };
 }
 
@@ -52,7 +52,7 @@ while(i--) {
   }
 }
 
-export default deferred => {  
+export default deferred => {
 	var binding, view, source;
   i = bindingExpressions.length;
   while(i--) {
