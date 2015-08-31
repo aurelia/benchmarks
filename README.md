@@ -2,25 +2,97 @@
 
 Performance benchmarks for Aurelia.
 
-## Running the app
-
-To run, follow these commands.
+## Installing
 
 ```shell
 npm install
 jspm install
+```
+
+**Important:** The jspm install will modify the paths in config.js.  Revert these modifications:
+
+![paths](http://i.imgur.com/Cz9AClM.png)
+
+This issue is being [investigated](https://github.com/jspm/jspm-cli/issues/1077#issuecomment-136190024).
+
+## Running
+
+Many factors can impact benchmark performance.  It's a good idea to close unnecessary browser tabs and applications while running the benchmarks.  A reboot prior to running the benchmarks might help if you're seeing inconsistent results.
+
+To start the application:
+
+```shell
 gulp watch
 ```
 
-Browse to [http://localhost:3000](http://localhost:3000).
-
-**Note**
-Enable Chrome's microsecond timer with --enable-benchmarking
+Enable Chrome's microsecond timer with the `--enable-benchmarking` argument.
 
 Windows:
 ```shell
 start chrome --enable-benchmarking
 ```
+
+Browse to [http://localhost:3000](http://localhost:3000).
+
+### Establish a baseline
+
+The benchmark application has two sections: Harness and Tags.  Use the harness section to select and add benchmarks to the run queue.  Benchmarks are run sequentially.  If it's your first time running the application you'll want to establish the baseline performance.  Select all the benchmarks and press **Run**.  The currently running benchmark will be indicated in blue:
+
+![running](http://i.imgur.com/sk0w1x6.png)
+
+When the benchmarks complete enter a tag name (ie "baseline") and press **Tag**.  This will persist the most recent result for each of the selected benchmarks in `dist/tags/tags.json`.
+
+![tag](http://i.imgur.com/oak6sC7.png)
+
+```json
+[
+  {
+    "name": "binding-bind",
+    "timestamp": "2015-08-31T01:13:07.590Z",
+    "userAgent": "Chrome on Windows 8.1",
+    "period": 0.005819236144566549,
+    "tag": "baseline"
+  },
+  {
+    "name": "binding-interpolation-long",
+    "timestamp": "2015-08-31T01:13:13.397Z",
+    "userAgent": "Chrome on Windows 8.1",
+    "period": 0.004415373401538267,
+    "tag": "baseline"
+  },
+  {
+    "name": "binding-interpolation-short",
+    "timestamp": "2015-08-31T01:13:19.228Z",
+    "userAgent": "Chrome on Windows 8.1",
+    "period": 0.006167281012655818,
+    "tag": "baseline"
+  },
+  ...
+```
+
+Tag names should be specific to the "version" or "change" to the Aurelia codebase you are performance testing.  Test changes across multiple browsers and tag the results using the same tag name to enable cross-browser performance comparisons.
+
+![cross-browser](http://i.imgur.com/ifreqNG.png)
+
+## Test changes
+
+Once you've established a baseline you're ready to test changes.  Use the `gulp update-own-deps` command to pull in changes from the Aurelia repos.  For quick tests select a subset of the benchmarks using the search feature.
+
+![search](http://i.imgur.com/egWRnW0.png)
+
+Click **Run** to re-run the benchmarks.  Results will appear alongside the baseline results.  Improved performance is indicated in green.  Worse performance is indicated in red.
+
+![perf](http://i.imgur.com/FXN0M0A.png)
+
+Repeat the process of making changes and using `gulp update-own-deps` until you're satisfied with the results.
+
+## Compare tags
+
+The tags section charts the performance of each tagged result.  Use the benchmark and user-agent filters to limit the results that appear in the chart.
+
+![tags](http://i.imgur.com/MS1xoHc.png)
+
+---
 
 ## Adding Micro Benchmarks
 
