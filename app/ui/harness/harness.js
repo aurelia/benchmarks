@@ -24,15 +24,7 @@ export class Harness extends BenchmarkViewModel {
       .then(() => this.isTagging = false);
   }
 
-  definitionClicked(definition, event) {
-    if (event.target.type === 'checkbox') {
-      throw 'hackity hack hack hack';
-      // event.stopPropagation();
-      // event.preventDefault();
-      // return false;
-      // return true;
-      // return;
-    }
+  definitionClicked(definition, event) {    
     let index = this.selectedDefinitions.indexOf(definition);
     if (index === -1) {
       this.selectedDefinitions.push(definition);

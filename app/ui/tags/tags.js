@@ -9,7 +9,6 @@ export class Results extends BenchmarkViewModel {
   charts;
   chartOptions = {};
   selectedUserAgents;
-  tagNames;
   showFilters = true;
 
   constructor(definitionRepository, resultRepository) {
@@ -22,31 +21,37 @@ export class Results extends BenchmarkViewModel {
 
   compileChartData() {
     let charts = [];
-    let results = this.resultRepository.tags;
+    let results = this.resultRepository.tags.filter(r => this.selectedUserAgents.find(ua => ua === r.userAgent) && this.selectedDefinitions.find(d => d.name === r.name));
+
+    // distinct list of tag names.
+    let tagNames = results.filter((result, index) => results.findIndex(t => t.tag === result.tag) === index)
+      .map(result => result.tag);
 
     for (let definition of this.selectedDefinitions) {
-      let series = [];
+      for (let field of ['period', 'heapSize']) {
+        let series = [];
 
-      for (let ua of this.selectedUserAgents) {
-        let data = this.tagNames.map(tag => {
-          let result = results.find(t => t.userAgent === ua && t.name === definition.name && t.tag === tag);
-          return result ? result.period : null;
-        });
-        if (data.find(d => d !== null)) {
-          series.push({
-            name: ua,
-            data: data
+        for (let ua of this.selectedUserAgents) {
+          let data = tagNames.map(tag => {
+            let result = results.find(t => t.userAgent === ua && t.name === definition.name && t.tag === tag);
+            return result ? result[field] : null;
           });
+          if (data.find(d => d !== null)) {
+            series.push({
+              name: ua,
+              data: data
+            });
+          }
         }
-      }
 
-      charts.push({
-        name: definition.name,
-        data: {
-          labels: this.tagNames,
-          series: series
-        }
-      });
+        charts.push({
+          name: `${definition.name} (${field === 'period' ? 'speed' : 'memory'})`,
+          data: {
+            labels: tagNames,
+            series: series
+          }
+        });
+      }
     }
     this.charts = charts;
   }
@@ -70,11 +75,6 @@ export class Results extends BenchmarkViewModel {
     let definitionsWithResults = this.definitions.filter(d => this.resultRepository.tags.find(t => t.name === d.name));
     this.definitions = this.filteredDefinitions = definitionsWithResults;
     this.selectedDefinitions = this.definitions.slice(0);
-
-    // distinct list of tag names.
-    this.tagNames = this.resultRepository.tags
-      .filter((result, index) => this.resultRepository.tags.findIndex(t => t.tag === result.tag) === index)
-      .map(result => result.tag);
 
     this.compileChartData();
   }

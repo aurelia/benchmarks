@@ -4,15 +4,15 @@ import {bindable, customElement} from 'aurelia-framework';
 export class ResultSet {
   @bindable results;
 
-  textClass(result) {
-    let change = this.compare(result);
+  getTextClass(result, field) {
+    let change = this.compare(result, field);
     return !change || change.same ? 'text-muted' : (change.improved ? 'text-success' : 'text-danger');
   }
 
-  compare(result) {
+  compare(result, field) {
     var previous = this.getPrevious(result);
     if (previous) {
-      let p = (result.period - previous.period) / previous.period * 100;
+      let p = (result[field] - previous[field]) / previous[field] * 100;
       return {
         same: Math.abs(p) <= 15,
         improved: p < -15,

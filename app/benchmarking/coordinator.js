@@ -22,8 +22,8 @@ export class Coordinator {
       this.active = definition;
       let runner = definition.type === type.micro ? this.micro : this.macro;
       return runner.run(definition.name)
-        .then(period => {
-          let result = this.resultFactory.fromScore(definition.name, period);
+        .then(measures => {
+          let result = this.resultFactory.fromMeasures(definition.name, measures);
           this.results.add(result);
           this.active = null;
         });
