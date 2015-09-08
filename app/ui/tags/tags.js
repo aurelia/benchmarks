@@ -6,21 +6,28 @@ import {BenchmarkViewModel} from '../benchmark-view-model';
 
 @inject(DefinitionRepository, ResultRepository)
 export class Results extends BenchmarkViewModel {
-  chartData;
+  charts;
   chartOptions = {};
   selectedUserAgents;
   tagNames;
+  showFilters = true;
 
   constructor(definitionRepository, resultRepository) {
     super(definitionRepository, resultRepository);
   }
 
+  toggleFilters() {
+    this.showFilters = !this.showFilters;
+  }
+
   compileChartData() {
-    let series = [];
+    let charts = [];
     let results = this.resultRepository.tags;
 
-    for (let ua of this.selectedUserAgents) {
-      for (let definition of this.selectedDefinitions) {
+    for (let definition of this.selectedDefinitions) {
+      let series = [];
+
+      for (let ua of this.selectedUserAgents) {
         let data = this.tagNames.map(tag => {
           let result = results.find(t => t.userAgent === ua && t.name === definition.name && t.tag === tag);
           return result ? result.period : null;
@@ -32,11 +39,16 @@ export class Results extends BenchmarkViewModel {
           });
         }
       }
+
+      charts.push({
+        name: definition.name,
+        data: {
+          labels: this.tagNames,
+          series: series
+        }
+      });
     }
-    this.chartData = {
-      labels: this.tagNames,
-      series: series
-    };
+    this.charts = charts;
   }
 
   filterClicked() {

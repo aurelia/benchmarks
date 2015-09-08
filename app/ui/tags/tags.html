@@ -1,11 +1,11 @@
 <template>
   <require from="./chart"></require>
 
-  <h1>Results</h1>
+  <h1>Results <button class="pull-right btn btn-secondary" click.delegate="toggleFilters()">Filters</button></h1>
 
   <section class="results">
     <div class="row">
-      <div class="col-sm-4">
+      <div class="col-sm-4" show.bind="showFilters">
         <div class="card">
           <div class="card-block">
             <h4 class="card-title">User Agents</h4>
@@ -40,10 +40,11 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-8">
+      <div class="col-sm-${$parent.showFilters ? '8' : '6'}" repeat.for="chart of charts">
         <div class="card">
           <div class="card-block">
-            <chart type="Line" data.bind="chartData" options.bind="chartOptions"></chart>
+            <h4 class="card-title">${chart.name}</h4>
+            <chart type="Line" data.bind="chart.data" options.bind="$parent.chartOptions"></chart>
           </div>
         </div>
       </div>
