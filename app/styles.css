@@ -23,17 +23,8 @@
   font-weight: normal;
 }
 
-.harness .result-set-container {
-  width: 0;
-  min-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.harness .result {
-  display: inline-block;
-  margin-right: 5px;
+.harness .tagged {
+  font-weight: bold;
 }
 
 /**

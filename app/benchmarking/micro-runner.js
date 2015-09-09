@@ -8,7 +8,7 @@ export class MicroRunner {
   run(name) {
     return System.import(`../benchmarks/micro/${name}/index`)
       .then(module => {
-        let heapSizeDeltas = [];
+        let heapDeltas = [];
         let fn = module.default;
 
         // track changes in heap size if memory profiling is available.
@@ -16,7 +16,7 @@ export class MicroRunner {
           fn = deferred => {
             let initialHeapSize = window.performance.memory.usedJSHeapSize;
             module.default(deferred);
-            heapSizeDeltas.push(window.performance.memory.usedJSHeapSize - initialHeapSize);
+            heapDeltas.push(window.performance.memory.usedJSHeapSize - initialHeapSize);
           }
         }
 
@@ -25,7 +25,7 @@ export class MicroRunner {
           let options = {
               defer: true,
               fn: fn,
-              onComplete: () => resolve({ period: benchmark.times.period, heapSizeDeltas: heapSizeDeltas })
+              onComplete: () => resolve({ period: benchmark.times.period, heapDeltas: heapDeltas })
             };
           benchmark = new Benchmark(name, options);
 

@@ -23,7 +23,7 @@ export class MacroRunner {
         window.removeEventListener('message', handleMessage)
         this.iframe.src = 'about:blank';
 
-        resolve({ period: (finish - start) / 1000.0, heapSizeDeltas: [] });
+        resolve({ period: (finish - start) / 1000.0, heapDeltas: [] });
       };
 
       window.addEventListener('message', handleMessage);

@@ -28,7 +28,7 @@ export class Results extends BenchmarkViewModel {
       .map(result => result.tag);
 
     for (let definition of this.selectedDefinitions) {
-      for (let field of ['period', 'heapSize']) {
+      for (let field of ['period', 'heapDelta']) {
         let series = [];
 
         for (let ua of this.selectedUserAgents) {
@@ -45,7 +45,7 @@ export class Results extends BenchmarkViewModel {
         }
 
         charts.push({
-          name: `${definition.name} (${field === 'period' ? 'speed' : 'memory'})`,
+          name: `${definition.name} (${field === 'period' ? 'duration' : 'memory'})`,
           data: {
             labels: tagNames,
             series: series

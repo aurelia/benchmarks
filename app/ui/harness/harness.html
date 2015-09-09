@@ -16,7 +16,7 @@
                 <button class="btn btn-primary" click.delegate="run()" disabled.bind="!selectedDefinitions.length">Run</button>
               </form>
             </th>
-            <th>
+            <th colspan.bind="userAgents.length">
               <form class="form-inline pull-right">
                 <input type="text" class="form-control" placeholder="Tag Name" ref="tagInput">
                 <button class="btn btn-success-outline" type="submit"
@@ -24,6 +24,14 @@
                         disabled.bind="isTagging || !tagInput.value || !selectedDefinitions.length">Tag
                 </button>
               </form>
+            </th>
+          </tr>
+          <tr>
+            <th colspan="2">
+              Benchmark
+            </th>
+            <th repeat.for="userAgent of userAgents">
+              ${userAgent}
             </th>
           </tr>
         </thead>
@@ -42,12 +50,9 @@
               <small class="text-muted">${definition.type}</small>
             </td>
             <!-- results -->
-            <td>
-              <div if.bind="$parent.results[definition.name]">
-                <div class="result-set-container" repeat.for="userAgent of $parent.userAgents">
-                  <small class="user-agent text-muted">${userAgent}:</small>
-                  <result-set results.bind="$parent.$parent.results[$parent.definition.name][userAgent]"></result-set>
-                </div>
+            <td repeat.for="userAgent of $parent.userAgents">
+              <div if.bind="$parent.$parent.results[$parent.definition.name]">                
+                <result-set results.bind="$parent.$parent.results[$parent.definition.name][userAgent]"></result-set>
               </div>
             </td>
           </tr>

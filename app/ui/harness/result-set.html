@@ -1,10 +1,8 @@
 <template>
-  <div class="result" repeat.for="result of results" class.bind="result.tag ? 'tagged-result' : ''">
-    <span class.bind="$parent.getTextClass(result, 'period')">
-      ${result.period.toFixed(8)}
-    </span>
-    <span class.bind="$parent.getTextClass(result, 'heapSize')" if.bind="result.heapSize">
-      <br/>${(result.heapSize / 1024 / 1024).toFixed(8)}
-    </span>
+  <div repeat.for="result of results" class.bind="result.tag ? 'tagged' : ''">
+    <span class.bind="$parent.getTextClass(result, 'period')">${result.period.toFixed(4)}</span>
+    <span if.bind="result.heapDelta"
+          class.bind="$parent.getTextClass(result, 'heapDelta')">${result.heapDelta}</span>
+    <small class="text-muted" if.bind="result.tag">${result.tag}</small>
   </div>
 </template>
